@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esthella Cortes - Psychoanalysis</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --deep-brown: #3D3D3D;
+            --light-brown: #707070;
+            --deep-green: #2D3E36;
+            --light-green: #4D6E5A;
+            --bg-color: #FAFAFA;
+            --accent-color: #E6E2DD;
+        }
+        
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .navbar-brand {
+            color: var(--deep-brown);
+            font-weight: 600;
+        }
+        
+        .nav-link {
+            color: var(--deep-brown);
+            font-weight: 500;
+        }
+        
+        .navbar .btn-contact {
+            background-color: var(--deep-green);
+            color: white;
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero {
+            height: 100vh;
+            background: url('images/steve-johnson-5IeOK7YsHms-unsplash.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent overlay for better text readability */
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .hero h1 {
+            font-size: 5rem; /* Increased font size for the heading */
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.8rem; /* Increased font size for the paragraph */
+            margin-top: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero .btn-primary {
+            background-color: white;
+            color: var(--deep-green);
+            border: none;
+            padding: 14px 35px; /* Slightly larger button */
+            font-size: 1.2rem; /* Increased font size for the button */
+            margin-top: 25px;
+            border-radius: 8px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .about, .services, .faq, .psychoanalysis-section {
+            padding: 5rem 0;
+            background-color: var(--bg-color);
+        }
+        
+        .psychoanalysis-section {
+            background-color: var(--accent-color);
+        }
+        
+        .approach-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            color: var(--deep-brown);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 1px;
+            background-color: var(--deep-green);
+        }
+        
+        .service-card {
+            background-color: #fff;
+            border-radius: 0;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s;
+            box-shadow: none;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover {
+            transform: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--light-green);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            color: var(--deep-brown);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: -0.3px;
+        }
+        
+        .accordion-item {
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-bottom: 1rem;
+            border-radius: 0;
+        }
+        
+        .accordion-button {
+            font-weight: 400;
+            padding: 1.25rem;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--deep-green);
+            color: white;
+            box-shadow: none;
+        }
+        
+        .footer {
+            background-color: var(--deep-brown);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer h5 {
+            color: white;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.3px;
+        }
+        
+        .footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--light-green);
+        }
+        
+        .language-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            font-size: 0.875rem;
+        }
+        
+        .quote-box {
+            background-color: var(--accent-color);
+            padding: 2rem;
+            border-left: 3px solid var(--deep-green);
+            margin: 2rem 0;
+            font-style: italic;
+        }
+        
+        .psychoanalysis-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .psychoanalysis-card h3 {
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .approach-item {
+            margin-bottom: 2rem;
+        }
+        
+        .approach-item h3 {
+            color: var(--deep-green);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Esthella Cortes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#psychoanalysis">Psychoanalysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#approach">Approach</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-contact" href="mailto:esthella@cortespractice.com">Get in Touch</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>PSYCHOANALYSIS AND PSYCHOTHERAPY</h1>
+                <p>Professional psychoanalysis in a supportive environment with Esthella Cortes.</p>
+                <span class="language-badge"><i class="fas fa-globe me-2"></i>English</span>
+                <span class="language-badge"><i class="fas fa-globe me-2"></i>Español</span>
+                <div class="mt-4">
+                    <a href="mailto:esthella@cortespractice.com" class="btn btn-primary">Book a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title text-center">About Me</h2>
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="/api/placeholder/600/400" alt="Esthella Cortes" class="img-fluid">
+            </div>
+            <div class="col-lg-6">
+                <h3 class="mb-4" style="color: var(--deep-green); font-weight: 300; letter-spacing: -0.5px;">Committed to Your Mental Wellbeing</h3>
+                <p class="lead mb-4">I am a registered and insured psychoanalyst with extensive clinical experience in mental health.</p>
+                <p>As well as being a clinician, I have spent years researching autism during my PhD in Psychiatry at the University of Cambridge. I am also an MD (Medical Doctor) with extensive experience in psychiatry placements, which has deeply informed my approach to psychoanalytic practice.</p>
+                <p>I offer personalized psychoanalytic services in comfortable settings in Cambridge and London, or online via secure video sessions for anyone based in the UK. My services are available in both English and Spanish to ensure you can express yourself in the language you feel most comfortable with.</p>
+                <div class="mt-4">
+                    <a href="mailto:esthella@cortespractice.com" class="btn btn-outline-dark">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Psychoanalysis Section -->
+    <section id="psychoanalysis" class="psychoanalysis-section">
+        <div class="container">
+            <h2 class="section-title text-center">What is Psychoanalysis?</h2>
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                    <p class="lead text-center">Psychoanalysis is both a theory of the mind and a therapeutic practice that helps individuals understand themselves more deeply and make meaningful changes in their lives.</p>
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                <p>"Psychoanalysis is a method of mind investigation. It is a body of knowledge about human experience. It is a treatment for psychological difficulties. It is a set of inquiries into art, literature, anthropology, religion, and social dynamics. It is a method of treating certain forms of ignorance, suffering, and unhappiness."</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="psychoanalysis-card">
+                        <h3>A Space for Self-Exploration</h3>
+                        <p>Psychoanalysis provides a unique setting where you can explore thoughts, feelings, and behaviors that may be outside your awareness but significantly impact your life. This process helps uncover patterns that may be holding you back from living fully.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="psychoanalysis-card">
+                        <h3>Understanding the Unconscious</h3>
+                        <p>Through our work together, you'll gain insight into unconscious processes that influence your relationships, work life, and sense of self. Psychoanalysis helps bring these hidden dynamics into awareness where they can be understood and transformed.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="psychoanalysis-card">
+                        <h3>Lasting Change</h3>
+                        <p>Unlike approaches that focus solely on symptom reduction, psychoanalysis addresses the root causes of emotional difficulties. This often leads to more profound and enduring changes that extend beyond specific problems to enrich your whole life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Approach Section -->
+    <section id="approach" class="approach-section">
+    <div class="container">
+        <h2 class="section-title text-center">My Approach</h2>
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <p class="lead text-center">I believe in creating a safe, non-judgmental environment where we can work together to explore your inner world and develop a deeper understanding of yourself.</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="approach-item">
+                    <h3>The Therapeutic Relationship</h3>
+                    <p>The relationship between analyst and patient is central to the analytic process. This unique relationship provides a secure base from which to explore difficult emotions and experiences. Through our interactions, patterns from other relationships in your life often emerge, offering valuable insights.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="approach-item">
+                    <h3>Free Association</h3>
+                    <p>I encourage you to speak freely about whatever comes to mind—thoughts, feelings, dreams, memories, or fantasies. This practice, known as free association, helps access unconscious material that may be influencing your life in significant ways.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="approach-item">
+                    <h3>Working Through</h3>
+                    <p>Psychoanalysis involves not just intellectual understanding but also emotional processing. "Working through" refers to the repeated exploration of difficult patterns and conflicts until they lose their grip on you, allowing for new ways of being in the world.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+    <div class="container">
+        <h2 class="section-title text-center">Services</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-user"></i>
+                    <h3>Individual Therapy</h3>
+                    <p>One-on-one sessions tailored to your unique needs and concerns, providing a safe space for exploration and growth. Psychoanalytic therapy typically involves meeting multiple times per week to facilitate deeper work.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Online Sessions</h3>
+                    <p>Secure and confidential video sessions for clients throughout the UK, offering flexibility and comfort. While in-person analysis is traditional, online sessions can be effective for those unable to attend in person.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Consultation</h3>
+                    <p>Initial consultations to determine if psychoanalysis is right for you. These sessions help us understand your specific needs and whether we would work well together.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <p class="lead">Services available in both <span class="fw-bold">English</span> and <span class="fw-bold">Spanish</span></p>
+        </div>
+    </div>
+</section>
+
+    <!-- Membership Section -->
+<section id="membership" class="membership-section">
+    <div class="container text-center">
+        <h2 class="section-title">Professional Memberships</h2>
+        <p class="lead">I am a proud member of the UK Council for Psychotherapy and verified by Psychology Today.</p>
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <img src="images/United_Kingdom_Council_for_Psychotherapy_logo.svg.png" alt="UK Council for Psychotherapy" class="img-fluid me-4" style="max-height: 100px;">
+            <img src="/path/to/psychology-today-logo.png" alt="Psychology Today" class="img-fluid" style="max-height: 100px;">
+        </div>
+    </div>
+</section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title text-center">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What is psychoanalysis?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Psychoanalysis is a form of therapy that focuses on unconscious processes as they are manifested in a person's present behavior. The goals of psychoanalysis are to help individuals better understand the unconscious forces that drive their thoughts, feelings, and behaviors. It's particularly effective for addressing longstanding patterns that cause distress or dissatisfaction in life.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    What kinds of problems can psychoanalysis help with?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Psychoanalysis can help with a wide range of emotional and psychological difficulties, including:
+                                    <ul>
+                                        <li>Depression, anxiety, and mood disorders</li>
+                                        <li>Relationship and intimacy issues</li>
+                                        <li>Identity and self-esteem concerns</li>
+                                        <li>Work-related difficulties and creative blocks</li>
+                                        <li>Trauma and loss</li>
+                                        <li>Persistent patterns of behavior that cause distress</li>
+                                        <li>Feelings of emptiness or lack of fulfillment</li>
+                                        <li>Difficulties with life transitions</li>
+                                    </ul>
+                                    Psychoanalysis is particularly effective for addressing long-standing issues that may have been resistant to other approaches.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    How does psychoanalysis work?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Psychoanalysis works by creating a safe and confidential space where unconscious thoughts, feelings, and patterns can gradually emerge into awareness. Through regular sessions, usually multiple times per week, we explore your thoughts, feelings, dreams, memories, and the therapeutic relationship itself. This process allows us to identify recurring patterns and unconscious influences that may be affecting your life.
+                                    <br><br>
+                                    As these patterns become conscious, you gain greater freedom to make different choices and develop new ways of relating to yourself and others. The analytic process involves not just intellectual understanding but also emotional working-through, which leads to deeper and more lasting change.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    How long does each session last and how often do we meet?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Standard sessions typically last 50 minutes. Sessions regularly occur 1-5 times per week, depending on your needs and goals. This flexibility allows for a deeper and more intensive exploration when needed. 
+                                    <br><br>
+                                    The frequency of sessions is something we will discuss together based on your circumstances. The initial consultation is £60, during which we will organize the cost of ongoing sessions. In psychoanalysis, money also has a symbolic value. Ongoing fees and means of payment are negotiated at the beginning of each treatment, depending on session frequency and individual circumstances.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    How long does the overall process of psychoanalysis take?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Psychoanalysis is typically a longer-term commitment than many other forms of therapy. The duration varies greatly depending on individual needs and goals, but often ranges from several months to several years. This extended timeframe allows for deep, transformative work that addresses root causes rather than just symptoms.
+                                    <br><br>
+                                    We'll regularly assess your progress and adjust our approach as needed. Some people find that they gain significant benefits within a few months, while others choose to continue the work over a longer period as they discover new layers of understanding and growth.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    What's the difference between psychoanalysis and other therapies?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Psychoanalysis differs from other therapies in several key ways:
+                                    <ul>
+                                        <li><strong>Depth and breadth:</strong> Psychoanalysis explores unconscious processes and early experiences in great depth, looking beyond immediate symptoms to understand underlying patterns.</li>
+                                        <li><strong>Frequency and duration:</strong> Sessions typically occur multiple times per week over an extended period, allowing for more intensive and comprehensive work.</li>
+                                        <li><strong>Therapeutic relationship:</strong> The relationship between analyst and analysand is itself an important focus of exploration.</li>
+                                        <li><strong>Free association:</strong> You are encouraged to speak freely about whatever comes to mind, rather than focusing on specific problems or goals.</li>
+                                        <li><strong>Holistic change:</strong> Rather than targeting specific symptoms, psychoanalysis aims at deeper structural change in how you understand yourself and relate to others.</li>
+                                    </ul>
+                                    While cognitive-behavioral therapies often focus on specific symptoms or behaviors, psychoanalysis takes a more holistic approach aimed at transformative change. This can lead to more comprehensive and lasting results, though it typically requires a greater investment of time.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingEight">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                    How do I know if psychoanalysis is right for me?
+                                </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Psychoanalysis may be particularly beneficial if:
+                                    <ul>
+                                        <li>You're experiencing recurring patterns in your life that cause distress</li>
+                                        <li>Previous therapy has been helpful but you feel there's more to explore</li>
+                                        <li>You're interested in self-understanding and personal growth</li>
+                                        <li>You value depth and are willing to commit to a process of exploration</li>
+                                        <li>Your difficulties seem complex or long-standing</li>
+                                    </ul>
+                                    The best way to determine if psychoanalysis is right for you is to schedule an initial consultation. This gives us both an opportunity to meet, discuss your concerns, and decide together whether this approach would be beneficial for you.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingNine">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                    What languages do you offer sessions in?
+                                </button>
+                            </h2>
+                            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    I offer sessions in both English and Spanish. Being able to express yourself in your preferred language can be particularly important in psychoanalysis, where nuances of language and expression play a significant role. I understand that emotional content can often be more accessible in one's native language, and I am committed to providing a space where you can communicate in the way that feels most natural to you.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header" id="headingCost">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCost" aria-expanded="false" aria-controls="collapseCost">
+                                    What are the costs of sessions?
+                                </button>
+                            </h2>
+                            <div id="collapseCost" class="accordion-collapse collapse" aria-labelledby="headingCost" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The initial consultation fee is £60. During this session, we will discuss your needs and organize the cost of ongoing sessions. 
+                                    <br><br>
+                                    In psychoanalysis, money also has a symbolic value. Ongoing fees and means of payment are negotiated at the beginning of each treatment, depending on session frequency and individual circumstances. Sessions typically occur 1-5 times per week, and the cost will reflect the agreed-upon frequency and your specific situation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Esthella Cortes</h5>
+                    <p>Registered and insured psychoanalyst providing professional services in person and online.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Locations</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Cambridge, UK</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> London, UK</p>
+                    <p><i class="fas fa-laptop me-2"></i> Online (UK-based clients)</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-envelope me-2"></i> <a href="mailto:esthella@cortespractice.com">esthella@cortespractice.com</a></p>
+                    <p class="mb-1"><span class="language-badge">English</span> <span class="language-badge">Español</span></p>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.1);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Esthella Cortes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
