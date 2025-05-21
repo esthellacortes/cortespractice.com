@@ -49,49 +49,141 @@
             letter-spacing: 0.5px;
         }
 
-        .hero {
-            height: 100vh;
-            background: url('images/steve-johnson-5IeOK7YsHms-unsplash.jpg') no-repeat center center;
-            background-size: cover;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+.hero {
+    min-height: 60vh;
+    background: url('images/steve-johnson-5IeOK7YsHms-unsplash.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 80px 0;
+}
 
-        .hero-content {
-            max-width: 700px;
-            background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent overlay for better text readability */
-            padding: 20px;
-            border-radius: 8px;
-        }
+.hero-content {
+    max-width: 700px;
+    background-color: rgba(0, 0, 0, 0.62);
+    padding: 24px 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
 
-        .hero h1 {
-            font-size: 5rem; /* Increased font size for the heading */
-            font-weight: 300;
-            letter-spacing: -0.5px;
-            margin-bottom: 1rem;
-        }
+.hero h1 {
+    font-size: clamp(2rem, 7vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+    word-break: break-word;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
 
-        .hero p {
-            font-size: 1.8rem; /* Increased font size for the paragraph */
-            margin-top: 1.5rem;
-            opacity: 0.9;
-        }
+.hero p {
+    font-size: clamp(1.1rem, 3.6vw, 1.6rem);
+    margin-top: 1.5rem;
+    opacity: 0.94;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
 
-        .hero .btn-primary {
-            background-color: white;
-            color: var(--deep-green);
-            border: none;
-            padding: 14px 35px; /* Slightly larger button */
-            font-size: 1.2rem; /* Increased font size for the button */
-            margin-top: 25px;
-            border-radius: 8px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
+.hero .btn-primary {
+    background-color: white;
+    color: var(--deep-green);
+    border: none;
+    padding: 14px 35px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    width: fit-content;
+    min-width: 170px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
 
+.language-badge {
+    margin-bottom: 4px;
+}
+
+@media (max-width: 420px) {
+    .hero {
+        padding: 6px 0 4px 0;
+    }
+    .hero-content {
+        padding: 6px 1vw 8px 1vw;
+        border-radius: 6px;
+    }
+    .hero h1 {
+        font-size: 1.12rem;
+        margin-bottom: 0.12rem;
+        line-height: 1.06;
+        letter-spacing: 0;
+    }
+    .hero p {
+        font-size: 0.90rem;
+        margin-top: 0.32rem;
+        margin-bottom: 0.32rem;
+    }
+    .language-badge {
+        padding: 2px 8px;
+        margin-bottom: 2px;
+        margin-right: 3px;
+        font-size: 0.78rem;
+    }
+    .mt-4 {
+        margin-top: 0.33rem !important;
+    }
+    .hero .btn-primary {
+        font-size: 0.99rem;
+        padding: 8px 0;
+        margin-top: 8px;
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: unset;
+        padding: 18px 0 8px 0;  /* was 38px 0 18px 0 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-content {
+        padding: 10px 3vw 12px 3vw;  /* less vertical padding */
+        max-width: 99vw;
+    }
+    .hero h1 {
+        font-size: clamp(1.1rem, 7vw, 2rem);
+        margin-bottom: 0.3rem;   /* was 0.7rem */
+        line-height: 1.1;
+        white-space: pre-line;
+    }
+    .hero p {
+        font-size: clamp(0.98rem, 3.7vw, 1.08rem);
+        margin-top: 0.6rem;     /* was 1.1rem */
+        margin-bottom: 0.6rem;  /* was 1.1rem */
+    }
+    .hero .btn-primary {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px 0;         /* was 12px 0 */
+        margin-top: 10px;        /* was 16px */
+        min-width: 0;
+    }
+    .language-badge {
+        margin-bottom: 2px;
+        margin-right: 6px;
+        padding: 3px 10px;
+        font-size: 0.83rem;
+    }
+    .mt-4 {
+        margin-top: 0.7rem !important;  /* tighten up button gap */
+    }
+}
         .about, .services, .faq, .psychoanalysis-section {
             padding: 5rem 0;
             background-color: var(--bg-color);
