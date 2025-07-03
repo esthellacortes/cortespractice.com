@@ -75,7 +75,7 @@
         }
 
 .hero {
-    min-height: 60vh;
+    min-height: 100vh;
     background: url('images/steve-johnson-5IeOK7YsHms-unsplash.jpg') no-repeat center center;
     background-size: cover;
     background-position: center;
@@ -135,6 +135,7 @@
 
 @media (max-width: 420px) {
     .hero {
+        min-height: 100vh;
         padding: 6px 0 4px 0;
     }
     .hero-content {
@@ -171,7 +172,7 @@
 
 @media (max-width: 768px) {
     .hero {
-        min-height: unset;
+        min-height: 100vh;
         padding: 18px 0 8px 0;  /* was 38px 0 18px 0 */
         display: flex;
         align-items: center;
@@ -369,6 +370,18 @@
             margin-bottom: 0.5rem;
         }
 
+        .approach-image-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .approach-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
         @media (max-width: 768px) {
             .hero {
                 margin-top: 60px;
@@ -386,7 +399,7 @@
 
   gtag('config', 'G-DDTPWBDV25');
 </script>
-    
+
     <body>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg fixed-top">
@@ -445,9 +458,11 @@
                 <h2 class="section-title text-center">About Me</h2>
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <img src="images/esthella-cortes.jpeg"
-                             alt="Esthella Cortes"
-                             class="img-fluid">
+                        <div class="approach-image-container">
+                            <img src="images/esthella-cortes-1.png"
+                                 alt="Esthella Cortes"
+                                 class="img-fluid approach-image">
+                        </div>
                     </div>
                     <div class="col-lg-6">
                         <h3 class="mb-4"
@@ -526,29 +541,32 @@
                         </p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="approach-item">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="approach-item mb-4">
                             <h3>The Therapeutic Relationship</h3>
                             <p>
                                 The relationship between analyst and patient is central to the analytic process. This unique relationship provides a secure base from which to explore difficult emotions and experiences. Through our interactions, patterns from other relationships in your life often emerge, offering valuable insights.
                             </p>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="approach-item">
+                        <div class="approach-item mb-4">
                             <h3>Free Association</h3>
                             <p>
                                 I encourage you to speak freely about whatever comes to mind—thoughts, feelings, dreams, memories, or fantasies. This practice, known as free association, helps access unconscious material that may be influencing your life in significant ways.
                             </p>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="approach-item">
+                        <div class="approach-item mb-4">
                             <h3>Working Through</h3>
                             <p>
                                 Psychoanalysis involves not just intellectual understanding but also emotional processing. "Working through" refers to the repeated exploration of difficult patterns and conflicts until they lose their grip on you, allowing for new ways of being in the world.
                             </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12 text-center">
+                        <div class="approach-image-container">
+                            <img src="images/esthella-cortes-2.png"
+                                 alt="Esthella Cortes - Therapeutic Approach"
+                                 class="img-fluid approach-image">
                         </div>
                     </div>
                 </div>
